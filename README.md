@@ -27,7 +27,7 @@
 
 ## 🚀 Projects
 ### 1. [Dog Face recognition](https://github.com/your-project-link)
-- **Description**: 프로젝트에 대한 간단한 설명을 작성하세요.
+- **Description**: 강아지 얼굴 인식
 - **Technologies Used**: ![Python](https://img.shields.io/badge/-Python-blue?logo=python&logoColor=white), ![TensorFlow](https://img.shields.io/badge/-TensorFlow-FF6F00?logo=tensorflow&logoColor=white)
 
 ## 🎯 Goals
