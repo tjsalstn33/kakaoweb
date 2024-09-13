@@ -5,7 +5,7 @@
 안녕하세요! 저는 **컴퓨터 공학과 3학년 학생**입니다. 현재 인공지능(AI)에 관심을 두고, 이를 통해 **미래를 열어가는 엔지니어**가 되고자 합니다. 깃허브에 오신 것을 환영합니다! 🚀
 
 ## 🎓 Education
-- **○○ University**  
+- **Jeju National University**  
   컴퓨터 공학과, 3학년  
   AI, 머신러닝, 딥러닝에 집중하며 다양한 프로젝트를 진행 중입니다.
 
@@ -26,7 +26,7 @@
   ![Docker](https://img.shields.io/badge/-Docker-2496ED?logo=docker&logoColor=white)
 
 ## 🚀 Projects
-### 1. [Project Name](https://github.com/your-project-link)
+### 1. [Dog Face recognition](https://github.com/your-project-link)
 - **Description**: 프로젝트에 대한 간단한 설명을 작성하세요.
 - **Technologies Used**: ![Python](https://img.shields.io/badge/-Python-blue?logo=python&logoColor=white), ![TensorFlow](https://img.shields.io/badge/-TensorFlow-FF6F00?logo=tensorflow&logoColor=white)
 
@@ -35,6 +35,6 @@
 - 다양한 프로젝트를 통해 **문제 해결 능력**을 키우고, AI와 관련된 **심도 있는 연구**에 기여하고 싶습니다.
 
 ## 📫 Contact Me
-- **Email**: your.email@example.com
+- **Email**: tjsalstn33@naver.com
 - **GitHub**: [github.com/yourusername](https://github.com/yourusername)
 - **LinkedIn**: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
