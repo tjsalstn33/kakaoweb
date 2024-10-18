@@ -1,60 +1,42 @@
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    font-family: helvetica, arial, sans-serif;
-  }
-  
-  h1 {
-    color: blue;
+h1 {
+    color: red;
     text-align: center;
-    margin-left: 11%;
   }
   
-  #page {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
+  body {
+    font-family: helvetica, arial, sans-serif;
     height: 100vh;
+  }
+  
+  #left-container {
+    left: 0px;
+  }
+  
+  #right-container {
+    right: 0px;
   }
   
   .container {
     background-color: #eee;
     width: 15%;
     top: 0px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: stretch;
-    box-sizing: border-box;
-  }
-  
-  #left-container {
-    left: 0;
-  }
-  
-  #right-container {
-    right: 0;
+    position: absolute;
+    height: 100%;
+    padding: 10px;
   }
   
   .plant-holder {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
+    position: relative;
+    width: 80px;
+    height: 15%;
     left: -10px;
   }
   
   .plant {
-    display: block;
-    object-fit: contain;
-    width: 100%;
-    height: auto;
-    max-width: 130px;
-    max-height: 130px;
-    margin: auto;
+    position: absolute;
+    max-width: 150%;
+    max-height: 150%;
+    z-index: 2;
   }
   
   .jar-walls {
@@ -103,21 +85,26 @@ body {
   }
   
   .jar-glossy-short {
-    width: 15px;
-    height: 30px;
+    width: 10px;
+    height: 3%;
+    border-radius: 20px;
+    border-width: 0px;
+    background-color: #57ff65cf;
     position: absolute;
-    top: 55%;
-    left: 5%;
-    background: #cdf2fa;
-    border-radius: 2rem;
+    bottom: 20%;
+    left: 15px;
+    z-index: 10;
   }
   
   .jar-glossy-long {
-    width: 15px;
-    height: 100px;
+    width: 10px;
+    height: 8%;
+    border-radius: 20px;
+    border-width: 0px;
+    background-color: #57ff65cf;
     position: absolute;
-    top: 65%;
-    left: 5%;
-    background: #cdf2fa;
-    border-radius: 2rem;
+    bottom: 10%;
+    left: 15px;
+    z-index: 10;
   }
+  
