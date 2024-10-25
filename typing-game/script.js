@@ -14,6 +14,20 @@ const startButton = document.getElementById('start');
 let wordIndex = 0;
 let words = [];
 let startTime = 0;
+let highestScore = localStorage.getItem('highestScore') ? parseFloat(localStorage.getItem('highestScore')) : null;
+
+// 모달 요소 가져오기
+const modal = document.createElement('div');
+modal.className = 'modal';
+modal.innerHTML = `
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p id="modal-message"></p>
+    </div>
+`;
+document.body.appendChild(modal);
+const closeModal = modal.querySelector('.close');
+const modalMessage = document.getElementById('modal-message');
 
 startButton.addEventListener('click', () => {
     const quoteIndex = Math.floor(Math.random() * quotes.length); // 무작위 인덱스 생성
@@ -33,14 +47,27 @@ startButton.addEventListener('click', () => {
 });
 
 typedValueElement.addEventListener('input', () => {
+    typedValueElement.classList.add('typing'); // 입력 중 효과 적용
     const currentWord = words[wordIndex]; // 현재 타이핑할 단어를 currentWord에 저장
     const typedValue = typedValueElement.value; // 입력한 값을 typedValue에 저장
     if (typedValue === currentWord && wordIndex === words.length - 1) { // 마지막 단어까지 정확히 입력했는 지 체크
         const elapsedTime = new Date().getTime() - startTime; // 타이핑에 소요된 시간 계산
-        const message = `CONGRATULATIONS! You finished in ${elapsedTime / 1000} seconds.` ; // 타이핑 완료 메시지
+        const score = elapsedTime / 1000;
+        const message = `CONGRATULATIONS! You finished in ${score} seconds.`;
         messageElement.innerText = message; //생성된 메시지 화면에 표시
         typedValueElement.disabled = true; // 입력 필드 비활성화
         startButton.disabled = false; // 버튼 활성화
+
+        // 최고 점수 업데이트 및 저장
+        if (highestScore === null || score < highestScore) {
+            highestScore = score;
+            localStorage.setItem('highestScore', highestScore);
+            modalMessage.innerText = `New High Score: ${highestScore} seconds!`;
+        } else {
+            modalMessage.innerText = `Your time: ${score} seconds. Best: ${highestScore} seconds.`;
+        }
+
+        modal.style.display = 'block';
     } else if (typedValue.endsWith(' ') && typedValue.trim() === currentWord) { // 입력된 값이 공백으로 끝났는지와 공백을 제거한 값이 현재 단어와 일치하는 지 확인
         typedValueElement.value = ''; // 입력 필드 초기화하여 다음 단어 입력 준비
         wordIndex++; // 다음 단어로 이동
@@ -49,8 +76,13 @@ typedValueElement.addEventListener('input', () => {
         }
         quoteElement.childNodes[wordIndex].className = 'highlight'; // 다음으로 타이핑할 단어에 클래스 추가
     } else if (currentWord.startsWith(typedValue)) { //현재 단어의 일부를 맞게 입력하고 있는 지 확인
-        typedValueElement.className = ''; // 올바르면 클래스 제거
+        typedValueElement.classList.remove('error'); // 올바르면 클래스 제거
     } else {
-        typedValueElement.className = 'error'; // 틀리면 error 클래스 추가
+        typedValueElement.classList.add('error'); // 틀리면 error 클래스 추가
     }
+});
+
+// 모달 창 닫기 기능 추가
+closeModal.addEventListener('click', () => {
+    modal.style.display = 'none';
 });
