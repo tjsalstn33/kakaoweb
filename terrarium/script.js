@@ -55,3 +55,4 @@ function dragElement(terrariumElement) {
         terrariumElement.style.zIndex = zIndexCounter; // 요소를 가장 위로 가져오기
     }
 }
+//
