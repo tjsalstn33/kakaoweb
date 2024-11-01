@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Carbon Trigger</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="container">
+    <div class="image-holder">
+        <img alt="plants and people" src="images/plants-people.png" class="header-image" />
+    </div>
+    <div>
+        <h1>Welcome to Your Personal Carbon Trigger!</h1>
+    </div>
+    <form class="form-data" autocomplete="on">
+        <div>
+            <h2>New? Add your Information</h2>
+        </div>
+        <div>
+            <div class="region" for="region"><h3>Region Name</h3></div>
+            <input type="text" id="region" required class="region-name" />
+        </div>
+        <div>
+            <div class="api" for="api"><h3>Your API Key from tmrow</h3></div>
+            <input type="text" id="api" required class="api-key" />
+        </div>
+        <button class="search-btn">Submit</button>
+    </form>
+    <div class="result" style="display: none;"> <!-- 처음에는 숨겨진 상태 -->
+        <div class="loading" style="display: none;">loading...</div> <!-- 로딩 화면도 숨김 -->
+        <div class="errors"></div>
+        <div class="data"></div>
+        <div class="result-container">
+            <p><strong>Region: </strong><span class="my-region"></span></p>
+            <p><strong>Carbon Usage: </strong><span class="carbon-usage"></span></p>
+            <p><strong>Fossil Fuel Percentage: </strong><span class="fossil-fuel"></span></p>
+        </div>
+        <div class="btn-box">
+            <button class="clear-btn" style="display: none;">Change region</button> <!-- Change region 버튼도 숨김 -->
+        </div>
+    </div>
+    <script src="../src/index.js"></script>
+</body>
+</html>
