@@ -1,0 +1,13 @@
+{
+    "manifest_version": 3,
+    "name": "Cat Facts and GIFs",
+    "version": "1.0",
+    "description": "Displays random cat facts and related GIFs.",
+    "permissions": [],
+    "action": {
+      "default_popup": "index.html",
+      "default_icon": "icon.png"
+    }
+  }
+
+  
